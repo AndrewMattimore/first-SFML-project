@@ -23,8 +23,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\OneDrive\Desktop\tileset.png">
-      <Filter>Assets</Filter>
+    <Image Include="Assets\tileset.png">
+      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
 </Project>
