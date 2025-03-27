@@ -10,6 +10,11 @@ int main()
     sf::Sprite sprite(texture);
 
     std::vector<sf::Sprite> floors = floor.generateFloor(texture);
+    
+    sf::CircleShape circle(50.f);
+    circle.setFillColor(sf::Color(100, 250, 50));
+
+    circle.setPosition({ 50, 50 });
 
     while (window.isOpen())
     {
@@ -25,7 +30,22 @@ int main()
         {
             window.draw(sprite);
         }
+        window.draw(circle);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
+            circle.move({ -0.1f, 0.f });
+        }
+        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
+            circle.move({ 0.1f, 0.f });
+        }
 
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
+            circle.move({ 0.f, 0.1f });
+        }
+           
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
+            circle.move({ 0.f, -0.1f });
+        }
         window.display();
     }
 
